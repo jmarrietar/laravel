@@ -299,7 +299,8 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 
 ######SCREENSHOT
 
-##NEW USER  
+##NEW CUSTUMER
+If Button 'Add User' is pressed. It will redirect a form to create a New customer.  
 
 
 ######CONTROLLER
@@ -567,12 +568,34 @@ The Agent Panel Admin console is the same as Admin console but agents cannot edi
 
 Customers can just log in and see their personal information and edit it. 
 
+######VIEW
 ```php
+@extends('layouts.master')
 
-```
+@section('content')
+
+<p>Editar Informacion Customer  <p>
+
+ <form action="{{ route('SaveUser') }}" method="post">
+       {!! csrf_field() !!}
+
+        <label for="id">Id:</label>
+        <input class="form-control" type="text" name="id" value={{$usuarioDB->id}} readonly>
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" name="name" value={{$usuarioDB->name}}>
+        <label for="email">Email:</label>
+        <input class="form-control" type="text" name="email" value={{$usuarioDB->email}}>
+        <label for="password">Password:</label>
+        <input class="form-control" type="text" name="password" value="">
+            
+      <br>
+
+        <input class="btn btn-primary" type="submit" value="Editar">
+    </form>
 
 
-```php
+@stop
+
 
 ```
 
