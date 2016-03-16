@@ -617,10 +617,7 @@ Customers can just log in and see their personal information and edit it.
 
 
 ```
-<div align="center">
- <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/customer.png" width="100%" height="100%"/>
-</div>
-<br>
+
 
 
 
