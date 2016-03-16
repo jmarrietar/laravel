@@ -128,7 +128,7 @@ In case the user doesn't exist or the email or password are invalid , it will di
 
 ######controler
 
-		```php
+```php
 class HomeController extends BaseController
 {
 	public function showLogin(){
@@ -202,104 +202,4 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 ######view 
 
 
-
-		(PANTALLAZO)
-
-##CREATE A NEW USER 
-
-######controler
-		```php
-
-		```
-		
-######view 
-
-		```php
-
-		```
-
-		(PANTALLAZO)
-
-
-##ADMIN PANEL 
-
-The Admin Panel Admin console will show the Users in the database and their respective information. 
-
-######controler
-		```php
-
-		```
-		
-######view 
-
-		```php
-
-		```
-		(PANTALLAZO)
-
-
-	Delete User 
-
-		-> controler
-		```php
-
-		```
-		
-
-
-	Edit User 
-
-######controler
-		```php
-
-		```
-		
-######view 
-
-		```php
-
-		```
-
-		(PANTALLAZO)
-
-##AGENT PANEL 
-The Agent Panel Admin console is the same as Admin console but agents cannot edit or delete users. 
-
-######controler
-		```php
-
-		```
-		
-######view 
-
-		```php
-
-		```
-
-		(PANTALLAZO)
-
-
-##CUSTUMER
-
-Customers can just log in and see their personal information and edit it. 
-
-######controler
-		```php
-
-		```
-		
-######view 
-
-		```php
-
-		```
-
-		(PANTALLAZO)
-
-
-##Problems 
-
-No time to implement Bonus
-
-##Conclusions 
 
