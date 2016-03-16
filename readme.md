@@ -244,9 +244,9 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 
 The Admin Panel Admin console will show the Users in the database and their respective information. 
 		
-######VIEW 
+######VIEW
 
-		```php
+ ```php
 
 		@extends('layouts.master')
 
@@ -352,8 +352,8 @@ The Admin Panel Admin console will show the Users in the database and their resp
 						@stop
 
 
-		```
+```
 
-
+######SCREENSHOT
 
 
