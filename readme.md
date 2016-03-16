@@ -528,6 +528,10 @@ The Admin Panel Admin console will show the Users in the database and their resp
 ```
 
 ######SCREENSHOT
+<div align="center">
+ <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/admin.png" width="100%" height="100%"/>
+</div>
+<br>
 
 
 ######EDIT USER 
@@ -569,7 +573,10 @@ class EditController extends BaseController
 ```
 
 ######SCREENSHOT 
-
+<div align="center">
+ <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/edit1.png" width="100%" height="100%"/>
+</div>
+<br>
 
 
 ##AGENT PANEL 
@@ -610,6 +617,12 @@ Customers can just log in and see their personal information and edit it.
 
 
 ```
+<div align="center">
+ <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/customer.png" width="100%" height="100%"/>
+</div>
+<br>
+
+
 
 ##Problems 
 
