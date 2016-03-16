@@ -480,7 +480,24 @@ class EditController extends BaseController
 The Agent Panel Admin console is the same as Admin console but agents cannot edit or delete users. 
 
 
+##COSTUMER
 
+Customers can just log in and see their personal information and edit it. 
+
+```php
+
+```
+
+
+```php
+
+```
+
+##Problems 
+
+No time to implement Bonus
+
+##Conclusions 
 
 
 
