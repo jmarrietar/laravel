@@ -574,7 +574,7 @@ class EditController extends BaseController
 
 ######SCREENSHOT 
 <div align="center">
- <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/edit1.png" width="100%" height="100%"/>
+ <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/nuevo.png" width="100%" height="100%"/>
 </div>
 <br>
 
@@ -626,9 +626,11 @@ Customers can just log in and see their personal information and edit it.
 
 ##Problems 
 
-No time to implement Bonus
+I had problems implementing social authentication for larvalel and with configuration at AWS. I deployed the app to the server but i think i missed something with regards to folder permissions. 
+
+My url is :  http://ec2-52-37-138-24.us-west-2.compute.amazonaws.com/laravel/laravel/
 
 ##Conclusions 
-
+This test was nice and challenging because it made me learn larval on the fly and research about Amazon services. 
 
 
