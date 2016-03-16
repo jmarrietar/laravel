@@ -115,6 +115,8 @@ class DatabaseSeeder extends Seeder
 }
 
 
+```
+
 
 I implemented some get and post routes depending on the rol and what the action could be. Some routes with redirect to create, delete, edit users, authenticate or show login page. 
 
@@ -195,7 +197,7 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 
 }
 
-		```
+```
 		
 ######view 
 
