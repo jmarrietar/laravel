@@ -300,7 +300,7 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 ######SCREENSHOT
 
 <div align="center">
- <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/login.png" width="70%" height="70%"/>
+ <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/login.png" width="100%" height="100%"/>
 </div>
 <br>
 
@@ -406,6 +406,11 @@ if ($validator->fails()) {
 ```
 
 ######SCREENSHOT
+<div align="center">
+ <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/edit2.png" width="100%" height="100%"/>
+</div>
+<br>
+
 
 
 ##ADMIN PANEL 
