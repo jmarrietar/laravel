@@ -374,18 +374,54 @@ The Admin Panel Admin console will show the Users in the database and their resp
 
 ######SCREENSHOT
 
-######DELETE USER 
-```php
 
-```
-
-######Edit User 
+######EDIT USER 
 
 ```php
+
+class EditController extends BaseController
+{
+
+	public function EditUser(User $user){
+
+
+		return  view('EditUser')->with(['user'=>$user]); 
+
+	}
+
+	public function SaveEditUser(Request $request){
+
+
+		
+		$user=User::where('id', $request->get('id'))->first();
+		$user->name = $request->get('name');
+		$user->email = $request->get('email');
+		$user->password = bcrypt($request->get('password'));
+		$user->rol = $request->get('rol');
+		$user->visible = $request->get('visible');
+		$user->save();
+		
+
+	 //return redirect('/login');
+		return  'Usuario con Id '.'"'. $user->id. '"'.'Modificado';
+
+	}
+
+
+
+}
 
 ```
 
 ######SCREENSHOT 
+
+
+
+##AGENT PANEL 
+The Agent Panel Admin console is the same as Admin console but agents cannot edit or delete users. 
+
+
+
 
 
 
