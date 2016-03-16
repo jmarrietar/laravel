@@ -120,12 +120,6 @@ class DatabaseSeeder extends Seeder
 
 I implemented some get and post routes depending on the rol and what the action could be. Some routes with redirect to create, delete, edit users, authenticate or show login page. 
 
-```php
-
-CODIGO
-
-```
-
 
 ##LOGIN
 The login will request an email and a password. 
@@ -133,13 +127,113 @@ The login will request an email and a password.
 In case the user doesn't exist or the email or password are invalid , it will display some errors. 
 
 ######controler
+
 		```php
+class HomeController extends BaseController
+{
+	public function showLogin(){
+		return view('auth');
+	}
+
+	public function doLogin(Request $request){
+
+		$rules = array(
+			'email'    => 'required|email',
+			'password' => 'required|alphaNum|' 
+			);   
+
+		$validator = Validator::make($request->all(), $rules);
+
+if ($validator->fails()) {
+    return Redirect::to('login')
+        ->withErrors($validator);
+} 
+
+
+$usuarioDB=User::where('email', $request->get('email'))->first();
+
+
+
+
+if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('password')])) {
+
+     if ($usuarioDB['visible']=='0'){
+     		return 'Usuario No tiene Visibilidad Aun -> Contactar Admin'; 
+     }else if($usuarioDB['rol']=='3'){
+		return view('customer',[
+			'usuarioDB' => $usuarioDB
+			]);
+
+	}else if($usuarioDB['rol']=='1'){
+
+		$usuarios=User::orderBy('created_at', 'asc')->get();
+
+		return view('admin',[
+			'usuarios' => $usuarios
+			]); 
+
+	}else if($usuarioDB['rol']=='2'){
+
+		$usuarios=User::orderBy('created_at', 'asc')->get();
+
+		return view('agent',[
+			'usuarios' => $usuarios
+			]); 
+	}
+
+	else{
+		return 'otro rol'.$request->get('email'); 
+	}
+
+}else {
+
+		//	return Redirect::to('/login');; 
+	return 'No existe'.$usuarioDB['email'].gettype($usuarioDB['email']).$request->get('email').gettype($request->get('email')); 
+}
+
+
+
+}
+
+}
 
 		```
 		
 ######view 
 
 		```php
+@extends('layouts.master')
+
+@section('content')
+    <h1>Iniciar Sesión</h1>
+  
+  @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+    <form action="{{ route('doLogin') }}" method="post">
+       {!! csrf_field() !!}
+        <label for="email">Email:</label>
+        <input class="form-control" type="text" name="email" value="{{ old('email') }}">
+        <label for="password">Contraseña:</label>
+        <input class="form-control" type="password" name="password">
+
+      <br>
+
+        <input class="btn btn-primary" type="submit" value="Iniciar">
+    </form>
+
+<a href="NewUser" class="btn btn-success">Add User</a>
+
+@stop
+
 
 		```
 
