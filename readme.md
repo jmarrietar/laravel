@@ -623,7 +623,7 @@ Customers can just log in and see their personal information and edit it.
 
 ##Problems 
 
-I had problems implementing social authentication for larvalel and with configuration at AWS. I deployed the app to the server but i think i missed something with regards to folder permissions. 
+I had problems implementing social authentication for larvalel and with configuration with AWS. I deployed the app to the server but it didnt show public floder I think missed something with regards to folder permissions. 
 
 My url is :  http://ec2-52-37-138-24.us-west-2.compute.amazonaws.com/laravel/laravel/
 
