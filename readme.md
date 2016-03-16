@@ -117,9 +117,68 @@ class DatabaseSeeder extends Seeder
 
 ```
 
+##ROUTES
 
 I implemented some get and post routes depending on the rol and what the action could be. Some routes with redirect to create, delete, edit users, authenticate or show login page. 
+```php
 
+    
+Route::get('/', 'InicioController@inicio');
+
+Route::post('/', [
+    'uses' => 'InicioController@inicio',
+    'as'   => 'homepost',
+]);
+
+Route::post('login', [
+    'uses' => 'HomeController@doLogin',
+    'as'   => 'doLogin',
+]);
+
+
+Route::get('login', [
+    'uses' => 'HomeController@showLogin',
+    'as'   => 'auth_show_path',
+]);
+
+
+Route::delete('/usuarios/{id}', function ($id) {
+
+	$user = User::find($id);
+    $user->delete();
+    var_dump($user); 
+    return redirect('/login');
+});
+
+
+Route::get('/edit/{id}', function ($id) {
+
+	$user = User::find($id);
+    return  view('EditUser')->with(['user'=>$user]); 
+}
+);
+
+
+Route::post('SaveUser', [
+    'uses' => 'EditController@SaveEditUser',
+    'as'   => 'SaveUser',
+]);
+
+
+Route::post('NewUser', [
+    'uses' => 'SaveController@SaveUser',
+    'as'   => 'NewUser',
+]);
+
+Route::get('NewUser', [
+    'uses' => 'SaveController@ShowSaveUser',
+    'as'   => 'NewUser',
+]);
+
+Route::get('/auth/facebook', 'AuthController@redirectToProvider');
+Route::get('/auth/facebook/callback', 'AuthController@handleProviderCallback');
+
+```
 
 ##LOGIN
 The login will request an email and a password. 
