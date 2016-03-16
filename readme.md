@@ -132,12 +132,12 @@ The login will request an email and a password.
 
 In case the user doesn't exist or the email or password are invalid , it will display some errors. 
 
-		-> controler
+######controler
 		```php
 
 		```
 		
-		-> view 
+######view 
 
 		```php
 
@@ -147,12 +147,12 @@ In case the user doesn't exist or the email or password are invalid , it will di
 
 ##CREATE A NEW USER 
 
-		-> controler
+######controler
 		```php
 
 		```
 		
-		-> view 
+######view 
 
 		```php
 
@@ -165,12 +165,12 @@ In case the user doesn't exist or the email or password are invalid , it will di
 
 The Admin Panel Admin console will show the Users in the database and their respective information. 
 
-		-> controler
+######controler
 		```php
 
 		```
 		
-		-> view 
+######view 
 
 		```php
 
@@ -189,12 +189,12 @@ The Admin Panel Admin console will show the Users in the database and their resp
 
 	Edit User 
 
-		-> controler
+######controler
 		```php
 
 		```
 		
-		-> view 
+######view 
 
 		```php
 
@@ -205,12 +205,12 @@ The Admin Panel Admin console will show the Users in the database and their resp
 ##AGENT PANEL 
 The Agent Panel Admin console is the same as Admin console but agents cannot edit or delete users. 
 
-		-> controler
+######controler
 		```php
 
 		```
 		
-		-> view 
+######view 
 
 		```php
 
@@ -223,12 +223,12 @@ The Agent Panel Admin console is the same as Admin console but agents cannot edi
 
 Customers can just log in and see their personal information and edit it. 
 
-		-> controler
+######controler
 		```php
 
 		```
 		
-		-> view 
+######view 
 
 		```php
 
