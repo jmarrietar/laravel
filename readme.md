@@ -306,11 +306,94 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 
 ```php
 
+
+class SaveController extends BaseController
+{
+
+
+	public function SaveUser(Request $request){
+
+			$rules = array(
+			'name'=>'required',
+			'email'    => 'required|email|unique:users',
+			'password' => 'required|alphaNum|' 
+			);   
+
+		$validator = Validator::make($request->all(), $rules);
+
+if ($validator->fails()) {
+    return Redirect::to('NewUser')
+        ->withErrors($validator);
+} 
+		
+		$user=new User(); 
+		$user->name = $request->get('name');
+		$user->email = $request->get('email');
+		$user->password = bcrypt($request->get('password'));
+		$user->rol = 3;
+		$user->visible = 0;
+		$user->save();
+		
+
+		 //return redirect('/');
+			return 'Nuevo Costumer Guardado!';
+
+	}
+
+
+	public function ShowSaveUser(Request $request){
+		
+
+		return view('NewUser');
+	
+
+	}
+
+
+
+}
+
 ```
 
 ######VIEW
 
 ```php
+
+@extends('layouts.master')
+
+@section('content')
+
+<p>Nuevo Usuario <p>
+
+  @if (count($errors) > 0)
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
+
+ <form action="{{ route('NewUser') }}" method="post">
+       {!! csrf_field() !!}
+        <label for="name">Name:</label>
+        <input class="form-control" type="text" name="name" value="" required>
+      
+        <label for="name">Email</label>
+        <input class="form-control" type="text" name="email" value="" required>
+      
+        <label for="password">Password:</label>
+        <input class="form-control" type="text" name="password" value="" required>
+     
+      
+        <input class="btn btn-primary" type="submit" value="Guardar">
+    </form>
+
+
+@stop
+
 
 ```
 
