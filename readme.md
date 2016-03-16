@@ -20,7 +20,39 @@ Here I make  a user with email,password, rol and visible attribute(to know if it
 2 code is for Agent 
 1 code is for Admin 
 
-‘CODIGO’
+```php
+class CreateUsersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('users', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password', 60);
+            $table->integer('rol');
+            $table->integer('visible');
+            $table->rememberToken();
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::drop('users');
+    }
+}
+```
 
 Laravel implements a seeder and create some users to the data base. 
 
