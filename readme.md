@@ -117,11 +117,14 @@ class DatabaseSeeder extends Seeder
 
 ```
 
-##ROUTES 
 
 I implemented some get and post routes depending on the rol and what the action could be. Some routes with redirect to create, delete, edit users, authenticate or show login page. 
 
-‘CODIGO’
+```php
+
+CODIGO
+
+```
 
 
 ##LOGIN
@@ -130,16 +133,30 @@ The login will request an email and a password.
 In case the user doesn't exist or the email or password are invalid , it will display some errors. 
 
 		-> controler
+		```php
+
+		```
 		
 		-> view 
+
+		```php
+
+		```
 
 		(PANTALLAZO)
 
 ##CREATE A NEW USER 
 
 		-> controler
+		```php
+
+		```
 		
 		-> view 
+
+		```php
+
+		```
 
 		(PANTALLAZO)
 
@@ -149,23 +166,39 @@ In case the user doesn't exist or the email or password are invalid , it will di
 The Admin Panel Admin console will show the Users in the database and their respective information. 
 
 		-> controler
+		```php
+
+		```
 		
 		-> view 
 
+		```php
+
+		```
 		(PANTALLAZO)
 
 
 	Delete User 
 
-
 		-> controler
+		```php
+
+		```
+		
 
 
 	Edit User 
 
 		-> controler
+		```php
+
+		```
 		
 		-> view 
+
+		```php
+
+		```
 
 		(PANTALLAZO)
 
@@ -173,8 +206,15 @@ The Admin Panel Admin console will show the Users in the database and their resp
 The Agent Panel Admin console is the same as Admin console but agents cannot edit or delete users. 
 
 		-> controler
+		```php
+
+		```
 		
 		-> view 
+
+		```php
+
+		```
 
 		(PANTALLAZO)
 
@@ -184,8 +224,15 @@ The Agent Panel Admin console is the same as Admin console but agents cannot edi
 Customers can just log in and see their personal information and edit it. 
 
 		-> controler
+		```php
+
+		```
 		
 		-> view 
+
+		```php
+
+		```
 
 		(PANTALLAZO)
 
