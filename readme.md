@@ -299,6 +299,13 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 
 ######SCREENSHOT
 
+<div align="center">
+ <img src="https://github.com/jmarrietar/laravel/blob/master/imagesjose/login.png" width="70%" height="70%"/>
+</div>
+<br>
+
+
+
 ##NEW CUSTUMER
 If Button 'Add User' is pressed. It will redirect a form to create a New customer.  
 
