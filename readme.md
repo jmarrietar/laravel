@@ -240,6 +240,24 @@ if (\Auth::attempt(['email'=>$usuarioDB['email'],'password'  => $request->get('p
 
 ######SCREENSHOT
 
+##NEW USER  
+
+
+######CONTROLLER
+
+```php
+
+```
+
+######VIEW
+
+```php
+
+```
+
+######SCREENSHOT
+
+
 ##ADMIN PANEL 
 
 The Admin Panel Admin console will show the Users in the database and their respective information. 
@@ -355,5 +373,19 @@ The Admin Panel Admin console will show the Users in the database and their resp
 ```
 
 ######SCREENSHOT
+
+######DELETE USER 
+```php
+
+```
+
+######Edit User 
+
+```php
+
+```
+
+######SCREENSHOT 
+
 
 
